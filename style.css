@@ -126,6 +126,13 @@ p{
     font-size: 35px;
     color: #001a2e;
 }
+#progress-value:hover {
+     background-color: #000;
+     color: #fff;
+}
+
+
+
 button.normal{
     font-size: 14px;
     font-weight: 600;
@@ -196,10 +203,14 @@ body{
     align-items: center;
     justify-content: space-between;
     padding: 20px 10px;
+
+    
     background-color: #E3E6F3;
+    /* background-color: transparent; */
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
     z-index: 999;
-    position: sticky;
+    /* position: sticky; */
+    position: static;
     top: 0;
     left: 0;
       
@@ -218,8 +229,8 @@ body{
 
 #navbar li a{
     text-decoration: none;
-    font-size: 16px;
-    font-size: 600;
+    font-size: 20px;
+    font-size: 300;
     color: #1a1a1a;
     transition:0.3s ease;
 }
@@ -227,7 +238,11 @@ body{
 #navbar li a:hover,
 #navbar li a.active{
     color: #088178;
-
+    background-color: #d3d3d3;
+   
+    cursor: pointer;
+    padding: 5px 14px;
+    border-radius: 10px;
 }
 #navbar li a:active::after{
     content: "";
@@ -299,22 +314,21 @@ body{
 
 
 
-
 #hero{
     /* background-color: #273938; */
-    background: linear-gradient(136deg, rgb(68, 132, 206), rgb(26, 215, 192), rgb(255, 155, 17), rgb(155, 89, 182), rgb(255, 127, 127), rgb(236, 240, 241)) 0% 0% / 1200% 1200%;
-    height: 70vh;
+    
+    height:90vh;
     width: 100%;
     /* height: 100%; */
     text-align: center;
-    background-position: top 25% right 0;
+    /* background-position: top 25% right 0; */
     flex-direction: column;
     padding: 0 80px;
     display: flex;
     align-items: center;
     justify-content: center;
-    -webkit-animation: col 70s ease infinite;
-    animation: col 70s ease infinite;
+    -webkit-animation: col 7s ease infinite;
+    animation: col 7s ease infinite;
     --bs-bg-opacity: 1;
     background-color: transparent!important;
 
@@ -382,7 +396,7 @@ body{
 
 @media (max-width:799px) {
     #hero{
-        height: 70vh;
+        height: 90vh;
         padding: 0 80px;
         
     }#hero h2{
@@ -403,15 +417,25 @@ body{
 
 .socialicons  {
     margin: 4px;
-    padding-left: 5px;
-    padding-right: 5px;
+    padding: 15px 1px;
     transition: all .8s;
     font-size: 3rem;
-    padding-bottom: 10px;
 }
 .socialicons i:hover{
     cursor: pointer;
     color: #DD2476;
+}
+.socialicons #linkedin:hover{
+    cursor: pointer;
+    color: #0A66C2;
+}
+.socialicons #facebook:hover{
+    cursor: pointer;
+    color: #1877F2;
+}
+.socialicons #github:hover{
+    cursor: pointer;
+    color: #313234;
 }
 .socialicons i{
     color: white;
@@ -456,17 +480,25 @@ body{
     }
 }
 
+#abt{
+    background: #67B26F;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #4ca2cd, #67B26F);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #4ca2cd, #67B26F); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
+}
 .flex {
     display: flex;
     align-items: center;
 }
 .container {
     /* max-width: 1180px; */
+
     width: 100%;
+    height: 80vh;
     margin-inline: auto;
     padding-inline: var(20px);
     /* overflow: hidden; */
+    
 }
 
 
@@ -504,37 +536,97 @@ body{
 
 }
 
-#product1{
-    /* display: flex; */
-    text-align: center;
-    background-color: #edeaea;
+.header-left button:hover{
+    background-color: #088178;
+    color: #fff;
 }
 
-.pro-container{
+
+
+#project{
+    /* display: flex; */
+    text-align: center;
+    background-color: #fff6f6;
+    /* background-color: #003973; */
+    background: #003973;  
+    background: -webkit-linear-gradient(to right, #E5E5BE, #003973);  
+    background: linear-gradient(to right, #E5E5BE, #003973); 
+   
+    
+}
+
+/* .pro-container{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: center;
-}
+    width: 100%;
+} */
 
-.pro-container .pro{
+/* .pro-container .pro{
     padding: 10px;
-    /* width: 50%; */
+    width: 50%;
     width: 55vh;
     height: 100%;
     border: 1px solid #1c011c;
-    box-shadow: 0 0 8px #6c14d0;
+    box-shadow: 0 0 8px #d2abff;
     margin: 20px 0;
     position: relative;
-    background-color: #fff6f6;
+    background-color: #ffacac;
     
+} */
+
+
+.pro-container{
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-top: 40px;
+    /* width: 100%; */
+    height: 100%;
+    gap: 60px;
+    
+}
+
+.pro-container .pro{
+    padding: 40px;
+    /* border: 1px solid #1c011c; */
+    /* box-shadow: -8px 8px 8px 0 red;
+    background-color: #181818; */
+    
+    
+
+}
+.pro .work_img{
+    width: 500px;
+    
+    aspect-ratio: 16/9;
+    object-fit: contain;
+    border-radius: 1rem;
+    margin-bottom: 16px;
 }
 
 .description span{
     font-size: 26px;
+    font-family: var(--body-font);
 }
-.pro:hover{
-    transform: scale(1.1);
+.description p{
+    color: #ffffff;
+    font-size: 17px;
+    /* font-family: var(--body-font); */
+}
+.pro .work_img:hover{
+    transform: scale(1.04);
+}
+.pro a button{
+    font-size: 18px;
+    font-weight: 600;
+    font-family: var(--body-font);
 }
 .pro a button:hover{
     background-color: #088178;
@@ -572,6 +664,25 @@ body{
 
 /*   skills */
 /* ===== SKILLS =====*/
+.skills{
+    /* background-image: url(13955735_5415728.jpg);
+    width: 100%;
+   height: auto;
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center;
+   object-fit: cover; */
+   padding-top: 50px;
+   
+
+  
+    
+}
+
+
+
+
+
 .skills__container {
   row-gap: 2rem;
   text-align: center;
@@ -601,7 +712,27 @@ body{
   font-size: 2rem;
   margin-right: var(--mb-2);
   color: var(--first-color);
+  animation: circle 1.9s infinite;
+  transition: 1.3s;
+
 }
+
+@keyframes circle {
+   
+
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+
+    50% {
+        -webkit-transform: rotate(180deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+
 
 .skills__names {
   display: flex;
@@ -632,6 +763,15 @@ body{
 
 .skills__ux {
   width: 85%;
+}
+.skills__dataStr {
+  width: 65%;
+}
+.skills__react {
+  width: 55%;
+}
+.skills__dataStr {
+  width: 65%;
 }
 
 .skills__img {
@@ -677,10 +817,11 @@ body{
 
 
 .footer{
+    height: 40vh;
     background-color: #edeaea;;
     text-align: center;
     margin: 0px;
-    padding: 20px;
+    padding: 50px;
 }
 .footer p{
     text-align: center;
